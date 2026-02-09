@@ -18,9 +18,9 @@ class PdfDocumentNotifier extends Notifier<PdfDocumentState> {
     );
 
     // استخدام الرابط المباشر للكتاب للاختبار
-    final testUrlRef = PdfDocumentRefUri(
+    /*final testUrlRef = PdfDocumentRefUri(
       Uri.parse('https://dart.dev/guides/language/spec/dartLangSpec.pdf'),
-    );
+    );*/
 
     // نرجع الحالة وهي تحتوي على الملف بدلاً من null
     return PdfDocumentState(docRef: initialFile, isLoading: false);

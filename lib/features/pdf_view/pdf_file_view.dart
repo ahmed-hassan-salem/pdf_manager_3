@@ -29,8 +29,9 @@ class PdfFileView extends ConsumerWidget {
                 builder: (context, ref, child) {
                   final outline = ref.watch(pdfDocumentProvider).outline;
 
-                  if (outline == null)
+                  if (outline == null) {
                     return const Center(child: Text("لا يوجد فهرس"));
+                  }
 
                   return ListView.builder(
                     itemCount: outline.length,
@@ -74,7 +75,6 @@ class PdfFileView extends ConsumerWidget {
 
                   final outline = await document.loadOutline();
 
-                  print("عدد عناصر الفهرس المكتشفة: ${outline?.length}");
 
                   if (outline != null && outline.isNotEmpty) {
                     ref.read(pdfDocumentProvider.notifier).setOutline(outline);
